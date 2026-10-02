@@ -7,8 +7,9 @@
   },
   "dependencies": {
     "date-fns": "^4.4.0",
+    "firebase": "^12.19.0",
     "gray-matter": "^4.0.3",
-    "next": "latest",
+    "next": "^16.3.8",
     "react": "latest",
     "react-dom": "latest",
     "remark": "^15.0.1",
@@ -16,5 +17,10 @@
   },
   "engines": {
     "node": ">=18"
+  },
+  "allowScripts": {
+    "firebase@12.19.0": true,
+    "@firebase/util@1.15.3": true,
+    "protobufjs@7.6.6": true
   }
 }

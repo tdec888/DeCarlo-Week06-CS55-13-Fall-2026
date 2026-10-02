@@ -10,11 +10,12 @@ import Layout, { siteTitle } from './components/layout';
 import utilStyles from './utils.module.css';
 
 // Developer note: This helper reads markdown files on the server and returns the post data.
-import { getSortedPostsData } from '../lib/posts-json'; // this was changed to from /lib/posts.js to posts-json.js
+// import { getSortedPostsData } from '../lib/posts-json'; // this was changed to from /lib/posts.js to posts-json.js
+import { getSortedPostsData } from '../lib/posts-firebase'; // this was changed to from above line to connect to firebase
 
 export async function getStaticProps() {
   // Developer note: This runs during build and passes data to the page before rendering.
-  const allPostsData = getSortedPostsData();
+  const allPostsData = await getSortedPostsData(); // await needed to be added after converting from json, this now an async function in firebase js
   return {
     props: {
       allPostsData,
